@@ -10,4 +10,5 @@ visualization: {
   id: "world-map"
   label: "World Map"
   file: "visualization/world-map.js"
+  dependencies: ["cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet-src.js"]
 }
