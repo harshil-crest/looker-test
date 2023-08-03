@@ -11,6 +11,6 @@ visualization: {
   label: "World Map"
   file: "visualization/world-map.js"
   dependencies: ["https://unpkg.com/leaflet@1.7.1/dist/leaflet.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/geolocator/2.1.5/geolocator.min.js"
+    "https://unpkg.com/geolocator@latest/dist/geolocator.min.js"
   ]
 }
