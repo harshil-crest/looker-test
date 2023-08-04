@@ -1,3 +1,4 @@
+
 looker.plugins.visualizations.add({
   create: function (element, config) {
     element.innerHTML = `<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -21,7 +22,8 @@ var chart = element.querySelector('#map');
   }
 });
 async function getLocationData(ip) {
-  const response = await fetch(`http://ip-api.com/json/${ip}`);
+  // const userAgentHeader = "keycdn-tools:https://www.example.com";
+  const response = await fetch(`https://ipapi.co/8.8.8.8/json/`);
 console.log(response)
 const data = await response.json();
   return {
@@ -43,11 +45,26 @@ function initMap(lat, lng) {
 // Main function to get location data and initialize the map
 async function showLocationOnMap(ip) {
   try {
-      const locationData = await getLocationData(ip);
-      const lat = parseFloat(locationData.lat);
-      const lng = parseFloat(locationData.lon);
-      initMap(lat, lng);
+      // const locationData = await getLocationData(ip);
+      // const lat = parseFloat(locationData.lat);
+      // const lng = parseFloat(locationData.lon);
+      // initMap(lat, lng);
+      // const geolocator = window.Geolocator
+    // const geolocator = require('geolocator');
+  //   console.log(geolocator)
+  //   await geolocator.geolocate(ip, (err, data) => {
+  // if (err) {
+  //   console.log(err);
+  // } else {
+  //   console.log(data.latitude, data.longitude);
+  // }
+    // console.log(geolocator)
+    var ip = "103.108.207.58";
+var geo = lookup(ip);
+    console.log("geo here")
+    console.log(geo);
+    initMap(50,50);
   } catch (error) {
-      console.error('Error fetching location data:', error);
+      console.log('Error fetching location data:', error);
   }
 }
